@@ -1,6 +1,6 @@
 <callCenter>
     <section sortOrder="0" name="reqGeneralInfo" label="General Information">
-        <item sortOrder="0" name="reqInternalName" label="InternalName">INTERNAL_NAME</item>
+        <item sortOrder="0" name="reqInternalName" label="InternalName"></item>
         <item sortOrder="1" name="reqDisplayName" label="Display Name">Display Name</item>
         <item sortOrder="2" name="reqVendorInfoApiName" label="Conversation Vendor Info Developer Name">namespace__vendorName</item>
     </section>
@@ -21,4 +21,3 @@
         <item sortOrder="2" name="custom2" label="custom2">Custom2</item>
     </section>
 </callCenter>
-

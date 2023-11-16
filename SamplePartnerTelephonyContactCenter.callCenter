@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CallCenter xmlns="http://soap.sforce.com/2006/04/metadata">
+    <adapterUrl>https://127.0.0.1:8080/</adapterUrl>
+    <customSettings>{&quot;messageBridgeComponentFqn&quot;:&quot;quickStartPT:lwcBridge&quot;,&quot;scvVendorLoginUrl&quot;:&quot;https://127.0.0.1:8080/login.html&quot;,&quot;reqTimeout&quot;:&quot;5000&quot;,&quot;vendorInfoApiName&quot;:&quot;quickStartPT__quickStartPartnerTelephony&quot;,&quot;reqStandbyUrl&quot;:&quot;https://domain:port/softphone&quot;,&quot;reqCallCenterType&quot;:&quot;SCVBYOT&quot;,&quot;reqSoftphoneHeight&quot;:&quot;300&quot;,&quot;reqUseApi&quot;:&quot;true&quot;,&quot;reqSoftphoneWidth&quot;:&quot;500&quot;,&quot;reqSalesforceCompatibilityMode&quot;:&quot;Lightning&quot;}</customSettings>
+    <displayName>BYOT Partner Telephony AMER</displayName>
+    <displayNameLabel>Display Name</displayNameLabel>
+    <internalNameLabel>InternalName</internalNameLabel>
+    <sections>
+        <items>
+            <label>Conversation Vendor Info Developer Name</label>
+            <name>reqVendorInfoApiName</name>
+            <value>quickStartPT__quickStartPartnerTelephony</value>
+        </items>
+        <items>
+            <label>CTI Adapter URL</label>
+            <name>reqAdapterUrl</name>
+            <value>https://127.0.0.1:8080/</value>
+        </items>
+        <items>
+            <label>Version</label>
+            <name>reqVersion</name>
+            <value>1.0</value>
+        </items>
+        <items>
+            <label>Description</label>
+            <name>reqDescription</name>
+            <value>BYOT DEMO Connector for Partner Telephony Setup</value>
+        </items>
+        <items>
+            <label>BYOT Connector ProgId</label>
+            <name>reqProgId</name>
+            <value>DemoAdapter.DemoAdapter.1</value>
+        </items>
+        <label>General Information</label>
+        <name>reqGeneralInfo</name>
+    </sections>
+    <sections>
+        <items>
+            <label>Telephony Integration Certificate</label>
+            <name>reqTelephonyIntegrationCertificate</name>
+            <value>-----BEGIN CERTIFICATE-----
+MIIDzTCCArUCFDpndONF3SZDB2ucEHqr/5fW3tnbMA0GCSqGSIb3DQEBCwUAMIGi
+MQswCQYDVQQGEwJVUzEVMBMGA1UECAwMU2FuRnJhbnNpc2NvMRUwEwYDVQQHDAxT
+YW5GcmFuc2lzY28xFzAVBgNVBAoMDlNhbGVzZm9yY2UuY29tMREwDwYDVQQLDAhT
+b2Z0d2FyZTEOMAwGA1UEAwwFVml2ZWsxKTAnBgkqhkiG9w0BCQEWGnZpdmVrLmt1
+bWFyQHNhbGVzZm9yY2UuY29tMB4XDTIyMTEyMzEwMTUwOVoXDTIzMTEyMzEwMTUw
+OVowgaIxCzAJBgNVBAYTAlVTMRUwEwYDVQQIDAxTYW5GcmFuc2lzY28xFTATBgNV
+BAcMDFNhbkZyYW5zaXNjbzEXMBUGA1UECgwOU2FsZXNmb3JjZS5jb20xETAPBgNV
+BAsMCFNvZnR3YXJlMQ4wDAYDVQQDDAVWaXZlazEpMCcGCSqGSIb3DQEJARYadml2
+ZWsua3VtYXJAc2FsZXNmb3JjZS5jb20wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAw
+ggEKAoIBAQDFH5Xf5UQE2JBA0I0xdhy0YXqGlJ+9FWFDgylrAx0UZxykUAOcUuZF
+lDQ7eiWp0o4kZOEAg3yMdAeP8dfyo6104+epS7DRpQVmiCTEp+YMv9V98XFCNf1B
+IEwDYdz7Oo469FPiKgEV9e+/rrY3VOwb7EyXR77K5Ryzt/3qsWqG5ryvu38BOzeM
+tXAZzhjtRfcddHODTINitmkZt/pvUmqR0Kmf+ZbXRO3iIWaUBsC14SGUfVY9A+ln
+Z126LtcL/2fvifvfD2dnCn0TtpHS2di9IvZWOKOmbVW3VdzQu5ao3JGijMPmCmdW
+xkKFOEV/kIQwHEBlKAGi78YBnFF4ljthAgMBAAEwDQYJKoZIhvcNAQELBQADggEB
+ADj3hBHCjrNVXogoiexpH93LO5LRIJ1v823FoTEhYCdo4hHinoWCekWR/0hHmuSE
+X2xAjTJWfaMrAezsmFoL+OO7H8GaKAQLZH0L0qV1Edr8v7uxXQZs1EWUvdizDrBT
+ChCdrAuCTL01lQJVQ1HPEmpDidU8vLexjMPnuWdizgeh8GWwzsotf/MdStt40NHQ
+OR+yiQ/lJpqgpzT/dAdk6eTIxdmQirWStynp0TgSaQlUZCaGNYZHJAQiuDJ9vdo5
+Of+E3UhVGS0WoFskO4xRaJbYxKDnEXWVpCO0T63LNEpJ4Fwhpq8/4GWJf6GdYxJ7
+cCpWXONk0s56R0hIobzypIA=
+-----END CERTIFICATE-----</value>
+        </items>
+        <items>
+            <label>Connector URL</label>
+            <name>ConnectorUrl</name>
+            <value>https://127.0.0.1:8080/remote.html</value>
+        </items>
+        <items>
+            <label>Long Distance Prefix</label>
+            <name>reqLongDistPrefix</name>
+            <value>+1</value>
+        </items>
+        <items>
+            <label>Bridge Component</label>
+            <name>BridgeComponent</name>
+            <value>quickStartPT__lwcBridge</value>
+        </items>
+        <items>
+            <label>Telephony Provider</label>
+            <name>reqTelephonyProvider</name>
+            <value>Quick Start Partner Telephony</value>
+        </items>
+        <items>
+            <label>Cloud Formation template version</label>
+            <name>reqVersion</name>
+            <value>1.0</value>
+        </items>
+        <label>SCV Settings</label>
+        <name>reqHvcc</name>
+    </sections>
+    <sections>
+        <items>
+            <label>custom2</label>
+            <name>custom2</name>
+            <value>Custom2</value>
+        </items>
+        <items>
+            <label>custom1</label>
+            <name>custom1</name>
+            <value>Custom1</value>
+        </items>
+        <items>
+            <label>custom0</label>
+            <name>custom0</name>
+            <value>custom0</value>
+        </items>
+        <label>Button Assignment</label>
+        <name>providerSettings1</name>
+    </sections>
+    <sections>
+        <items>
+            <label>custom2</label>
+            <name>custom2</name>
+            <value>Custom2</value>
+        </items>
+        <items>
+            <label>custom1</label>
+            <name>custom1</name>
+            <value>Custom1</value>
+        </items>
+        <items>
+            <label>custom0</label>
+            <name>custom0</name>
+            <value>custom0</value>
+        </items>
+        <label>Dialing Options</label>
+        <name>providerSettings2</name>
+    </sections>
+    <version>1</version>
+</CallCenter>
