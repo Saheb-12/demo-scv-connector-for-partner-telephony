@@ -21,12 +21,17 @@ const server = app.listen(process.env.SERVER_PORT, () => {
     console.log(`App listening to ${process.env.SERVER_PORT}. Press Ctrl+C to quit.`);
 });
 const io = new Server(server);
+
 io.on('connection', socket => {
+    console.log("socket : ", socket);
     socket.on('join', data => {
+        console.log("data: ", data);
         console.log('User joined: ' + data.username);
         socket.join(data.username);
     });
 
+    console.log("onlineUsers : ", onlineUsers);
+    
     socket.on('disconnect', () => {
         for (let [key, value] of onlineUsers.entries()) {
             if (value === socket.id) {
@@ -38,6 +43,7 @@ io.on('connection', socket => {
     });
 
     socket.on('presence', data => {
+        console.log("in Server Presence");
         if (data.isAvailable) {
             onlineUsers.set(data.username, socket.id);
         } else {

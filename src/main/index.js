@@ -11,6 +11,7 @@ import { initializeRemoteController } from '../remote-control/index'
 
 const connector = new Connector();
 window.addEventListener('load', () => {
+    console.log("Add Load Event Listener : Entered Index -> Now will initialize Connector and RemoteConnector");
     initializeConnector(connector);
     initializeRemoteController(connector);
 });

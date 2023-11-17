@@ -13,6 +13,7 @@ export function initializeRemoteController(connector) {
     requestBroadcastChannel.addEventListener('message', async (event) => {
         if (event && event.data) {
             try {
+                console.log("remote-control/index(initializeRemoteController) : ", event.data);
                 switch (event.data.type) {
                     case Constants.LOGIN_SUBMIT: {
                         connector.sdk.subsystemLoginResult(event.data.success);

@@ -16,6 +16,7 @@ let showPassword = false;
 
 previewButton.addEventListener('click', () => {
     showPassword = !showPassword;
+    console.log("showPassword: " + showPassword);
     if (showPassword) {
         passwordInput.type = 'text';
         showPasswordContainer.style.display = 'none';
@@ -29,7 +30,9 @@ previewButton.addEventListener('click', () => {
 
 submitButton.addEventListener('click', () => {
     const username = document.getElementById('username').value;
+    console.log("username: " + username);
     const password = document.getElementById('password').value;
+    console.log("password: " + password);
     const success = (username === 'test' && password === 'test');
     const requestBroadcastChannel = new BroadcastChannel('rc-request');
     requestBroadcastChannel.postMessage({

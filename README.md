@@ -76,3 +76,14 @@ $ gulp bundle --mode prod
 
 ## Contributing and Developing Locally
 We welcome contributors into our repo. Please read the [contributing guidelines](https://github.com/salesforce/demo-scv-connector/blob/master/CONTRIBUTING.md) for more information.
+
+
+## Sample Commands for DEMO Connector Run
+
+sudo lsof -ti:8080 | xargs kill -> Kills all processes running on port 8080
+To start the DEMO Connector run the below two commands separately in 2 different Terminal Window
+
+Also, for Partner Telephony to run you need to open the salesforce org and the Demo Client Connector in the same window.
+
+npm run client
+npm run server

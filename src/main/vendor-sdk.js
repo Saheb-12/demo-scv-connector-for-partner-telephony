@@ -33,7 +33,13 @@ class Call extends PhoneCall {
      * @param {string} callInfo - call info 
      */
     constructor(callType, contact, callAttributes, callInfo, callId) {
+        console.log("vendor-sdk(constructor) : ", callType);
+        console.log("vendor-sdk(constructor) : ", contact);
+        console.log("vendor-sdk(constructor) : ", callAttributes);
+        console.log("vendor-sdk(constructor) : ", callInfo);
+        console.log("vendor-sdk(constructor) : ", callId);
         const state = Constants.CALL_STATE.RINGING;
+        console.log("vendor-sdk(constructor) : ", state);
         callAttributes.initialCallHasEnded = false;
         callAttributes.state = state;
         callAttributes.isOnHold = callInfo && callInfo.isOnHold;
@@ -48,6 +54,7 @@ class Call extends PhoneCall {
      * set callId of parent call
      */
     set parentCallId(parentCallId) {
+        console.log("vendor-sdk(set parentCallId) : ", parentCallId);
         this.callInfo.parentCallId = parentCallId;
     }
 }
@@ -105,6 +112,7 @@ export class Sdk {
             showLoginPage: !!JSON.parse(localStorage.getItem('showLoginPage')),
             throwError: !!JSON.parse(localStorage.getItem('throwError'))
         };
+        console.log("vendor-sdk (Sdk -> constructor) : ", this.state);
     }
     /**
      * Get a call from the active calls stored on localStorage)
@@ -115,6 +123,7 @@ export class Sdk {
         }
         if (call.callAttributes && call.callAttributes.participantType) {
             const callByParticipant = Object.values(this.state.activeCalls).filter((obj) => obj['callAttributes']['participantType'] === call.callAttributes.participantType).pop();
+            console.log("vendor-sdk (Sdk -> getCall(callByParticipant)) : ", callByParticipant);
             if (!callByParticipant) {
                 throw new Error("Couldn't find an active call for participant " + call.callAttributes.participantType);
             }
@@ -122,6 +131,7 @@ export class Sdk {
         }
         if (call.callId) {
             const callByCallId = this.state.activeCalls[call.callId];
+            console.log("vendor-sdk (Sdk -> getCall(callByCallId)) : ", callByCallId);
             if (!callByCallId) {
                 throw new Error("Couldn't find an active call for callId " + call.callId);
             }
@@ -134,6 +144,7 @@ export class Sdk {
      */
     addCall(call) {
         this.state.activeCalls[call.callId] = call;
+        console.log("vendor-sdk (Sdk -> addCall(setting to localStorage)) : ", this.state.activeCalls);
         localStorage.setItem('activeCalls', JSON.stringify(this.state.activeCalls));
     }
 
@@ -152,6 +163,7 @@ export class Sdk {
     toggleAgentPresence(isAvailable){
         const socket = io();
         const username = this.state.agentId;
+        console.log("vendor-sdk (Sdk -> toggleAgentPresence(username)) : ", username);
         socket.emit("presence", { isAvailable, username });
     }
     /**
@@ -177,6 +189,7 @@ export class Sdk {
     }
 
     setAgentConfig(config) {
+        console.log("vendor-sdk (Sdk -> setAgentConfig(config)) : ", config);
         this.state.agentConfig.selectedPhone = config.selectedPhone;
         localStorage.setItem('agentConfig', JSON.stringify(this.state.agentConfig));
         return this.executeAsync("setAgentConfig", new GenericResult({
@@ -188,6 +201,7 @@ export class Sdk {
     * Update Agent Config used only for Voice call simulator
     */
    updateAgentConfig(agentConfig) {
+    console.log("vendor-sdk (Sdk -> updateAgentConfig(agentConfig)) : ", agentConfig);
        this.state.agentConfig.selectedPhone = agentConfig.selectedPhone;
        localStorage.setItem('agentConfig', JSON.stringify(this.state.agentConfig));
     }
@@ -345,6 +359,7 @@ export class Sdk {
      */
 
     init(callCenterConfig) {
+        console.log("vendor-sdk(Sdk -> init) : ", callCenterConfig);
         const username = this.state.agentId = callCenterConfig['userName'];
         this.state.userFullName = callCenterConfig['userFullName'];
         this.state.userPresenceStatuses = callCenterConfig['userPresenceStatuses']
@@ -573,6 +588,8 @@ export class Sdk {
      * @param {string} callInfo
      */
     startInboundCall(phoneNumber, callInfo) {
+        console.log("vendor-sdk( Sdk -> startInboundCall(phoneNumber)) : ", phoneNumber);
+        console.log("vendor-sdk( Sdk -> startInboundCall(callInfo)) : ", callInfo);
         callInfo = callInfo || { isOnHold: false };
         callInfo.callStateTimestamp = new Date();
         if (!this.state.agentAvailable) {
