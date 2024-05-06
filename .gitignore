@@ -8,3 +8,4 @@ src/.DS_Store
 config.env
 jest-report
 package-lock.json
+.sfdx
